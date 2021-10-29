@@ -1,0 +1,22 @@
+{
+  "name": "opensourceproject_sophiemoerman",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SophieMoerman1/openSourceProject_SophieMoerman.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SophieMoerman1/openSourceProject_SophieMoerman/issues"
+  },
+  "homepage": "https://github.com/SophieMoerman1/openSourceProject_SophieMoerman#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
