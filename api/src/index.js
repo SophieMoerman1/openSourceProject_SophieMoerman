@@ -3,17 +3,21 @@ const bodyParser = require("body-parser");
 const app = express();
 const PORT = 3000;
 
-module.exports = app;
+
 /**
  * [GET] Test endpoint
  * @returns returns (string) "Hello World" if server is active
  */
 
-app.get('/', function (req, res) {
-    res.send('Let us get started');
-    const myName = new Name('Sophie');
-    const myAge = new Age(21);
+app.get('/owner', async (req, res) => {
+    res.json({
+        name: 'Sophie'
+    });
 
+});
+
+app.post('/', function (req, res) {
+    res.send('the text has been posted');
 });
 
 app.put('/', function (req, res) {
@@ -27,3 +31,5 @@ app.delete('/', function (req, res) {
 app.listen(PORT, () => {
     console.log(`http://localhost:${PORT}`);
 });
+
+module.exports = app;
