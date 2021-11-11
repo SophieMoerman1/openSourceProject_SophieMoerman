@@ -16,16 +16,22 @@ app.get('/owner', async (req, res) => {
 
 });
 
-app.post('/', function (req, res) {
-    res.send('the text has been posted');
+app.post('/', async (req, res) => {
+    res.json({
+        message: 'the text has been posted'
+    });
 });
 
-app.put('/', function (req, res) {
-    res.send('The text has been updated');
+app.put('/', async (req, res) => {
+    res.json({
+        message: 'The text has been updated'
+    });
 });
 
-app.delete('/', function (req, res) {
-    res.send('deleting complete');
+app.delete('/', async (req, res) => {
+    res.json({
+        message: 'deleting complete'
+    });
 });
 
 app.listen(PORT, () => {
