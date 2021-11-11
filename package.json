@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./api/src/index.js",
+    "test": "jest --watchAll"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,11 @@
   },
   "homepage": "https://github.com/SophieMoerman1/openSourceProject_SophieMoerman#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "chai": "^4.3.4",
+    "express": "^4.17.1",
+    "supertest": "^6.1.6"
+  },
+  "devDependencies": {
+    "jest": "^27.3.1"
   }
 }
