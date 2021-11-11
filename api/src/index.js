@@ -12,6 +12,14 @@ server.get('/', function (req, res) {
     res.send('Hello World!');
 });
 
+server.put('/', function (req, res) {
+    return res.send('Received a PUT HTTP method');
+});
+
+server.delete('/', function (req, res) {
+    res.send('Received a DELETE HTTP method');
+});
+
 server.listen(PORT, () => {
     console.log(`Example app listening at http://localhost:${PORT}`);
 });
