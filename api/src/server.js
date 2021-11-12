@@ -1,9 +1,9 @@
 const express = require('express');
-//const bodyParser = require("body-parser");
+const bodyParser = require("body-parser");
 const app = express();
-const PORT = 4000;
+const PORT = 5000;
 
-const knex = require('knex')({
+/*const knex = require('knex')({
     client: 'pg',
     version: '7.2',
     connection: {
@@ -13,14 +13,14 @@ const knex = require('knex')({
         password: proces.env.POSTGRES_PASSWORD,
         database: proces.env.POSTGRES_DATABASE
     }
-});
+});*/
 
 /**
  * [GET] Test endpoint
  * @returns returns (string) "Sophie" if server is active
  */
 
-app.get('/owner', async (req, res) => {
+app.get('/user', async (req, res) => {
     res.json({
         name: 'Sophie'
     });
