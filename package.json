@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./api/src/server.js",
+    "start": "nodemon --legacy-watch ./api/src/server.js",
     "test": "jest --watchAll"
   },
   "repository": {
