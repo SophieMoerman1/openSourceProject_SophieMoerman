@@ -10,3 +10,7 @@ async function createTables(pg) {
         }
     });
 }
+
+module.exports = {
+    manageTables
+}

@@ -3,14 +3,9 @@ version: "3.9"
 services:
   api:
     build: ./api
-    image: sophm127/myapp:0.1
+    image: sophm127/app:0.1
     ports:
-      - "4000:4000"
-    enviroment:
-      POSTGRES_USER:
-      POSTGRES_DATABASE:
-      POSTGRES_PASSWORD:
-      POSTGRES_HOST: db
+      - "3000:3000"
     volumes:
       - .api/src:/usr/app/src
 
@@ -20,13 +15,15 @@ depends_on:
       - .api/src:/usr/app/src
     enviroment:
       - PG_CONNECTION_STRING=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@pg:5432/${POSTGRES}
-
- db:
-    image: "postgres:latest"
+    
+  pg:
+    image: postgres:latest
     ports:
       - 5432:5432
     enviroment:
-      POSTGRES_USER:
-      POSTGRES_DATABASE:
-      POSTGRES_PASSWORD:
-    
+      - POSTGRES_DB
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      #- PGData=/var/lib/postgresql/data
+    volumes:
+      -./_volumes/pgdata/:var/lib/postgresql/date
