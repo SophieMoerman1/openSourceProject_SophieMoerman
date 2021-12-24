@@ -4,9 +4,9 @@
 </p>
 
 # How to start this application
-<p >First create a .env file Then copy the .env example and paste to the .env file <br>
+<p >Locally use the command "npm start" <br>
+OR create a .env file Then copy the .env example and paste to the .env file <br>
 To run this app run "docker-compose up --build -d" <br>
-OR locally use the command "npm start"
 </p>
 
 # Endpoints
