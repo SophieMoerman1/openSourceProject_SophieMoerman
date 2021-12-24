@@ -138,7 +138,7 @@ app.delete('/students/:studentId', async (req, res) => {
  */
 
 
-/*app.listen(port, () => {
+app.listen(port, () => {
     console.log(`Webproject exercise running at http://localhost:${port}`);
     client.connect(err => {
         if (err) {
@@ -146,6 +146,6 @@ app.delete('/students/:studentId', async (req, res) => {
         }
         db = client.db(dbName);
     });
-});*/
+});
 
 module.exports = app;

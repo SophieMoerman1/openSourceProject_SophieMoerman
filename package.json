@@ -4,13 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-<<<<<<< HEAD:api/package.json
-    "start": "nodemon src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-=======
     "start": "nodemon api/src/server.js",
     "test": "jest --watchAll"
->>>>>>> feature/tussentijdsebeoordeling:package.json
   },
   "repository": {
     "type": "git",
