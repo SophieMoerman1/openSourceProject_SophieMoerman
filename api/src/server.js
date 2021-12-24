@@ -2,10 +2,12 @@
 
 let db, collection;
 
+
 const express = require('express');
 const app = express();
 const path = require('path');
 const port = process.env.PORT || 2000;
+
 
 const bodyparser = require('body-parser');
 const cors = require('cors');
@@ -135,6 +137,7 @@ app.delete('/students/:studentId', async (req, res) => {
  * @returns returns (string) "the text has been posted" if server is active
  */
 
+
 app.listen(port, () => {
     console.log(`Webproject exercise running at http://localhost:${port}`);
     client.connect(err => {
@@ -142,8 +145,6 @@ app.listen(port, () => {
             throw err;
         }
         db = client.db(dbName);
-        //listDatabases(client);
-        console.log(`connected to database: ${dbName}`);
     });
 });
 

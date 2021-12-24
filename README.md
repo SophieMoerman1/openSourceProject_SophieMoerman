@@ -11,7 +11,7 @@ OR locally use the command "npm start"
 
 # Endpoints
 
-## GET
+## **GET**
 ```bash
 "/students" 
 ```
@@ -22,12 +22,12 @@ List all the students with their information
 ```
 List students with their information based on studentId
 
-### Params structure
+### **Params structure**
 
 studentId: integer
 
 
-## POST
+## **POST**
 ```bash
 "/students" 
 ```
@@ -36,24 +36,41 @@ post a new student to the database
 
 Request body schema: application/json
 
-### Body structure:
+### **Body structure:**
 
 firstname: string lastname: string birthday: string studentnr: integer
 
-## PUT
+## **PUT**
 ```bash
 "/students" 
 ```
 update a student
 
 
-## DELETE
+## **DELETE**
 ```bash
 "/students/:studentId" 
 ```
 delete a student based on id
 
-### Params structure
+### **Params structure**
 
 studentId: integer
+
+## **TESTS**
+
+put this section in comments to make tests work
+
+```bash
+app.listen(port, () => {
+    console.log(`Webproject exercise running at http://localhost:${port}`);
+    client.connect(err => {
+        if (err) {
+            throw err;
+        }
+        db = client.db(dbName);
+    });
+});
+```
+
 
