@@ -6,7 +6,7 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USER}
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
-      - MONGO_INITDB_DATABASE=project
+      - MONGO_INITDB_DATABASE=STUDENTDB
   mongo-express:
     image: mongo-express
     environment:
@@ -16,8 +16,6 @@ services:
       - ME_CONFIG_MONGODB_AUTH_DATABASE=admin
       - ME_CONFIG_MONGODB_AUTH_USERNAME=${MONGO_ROOT_USER}
       - ME_CONFIG_MONGODB_AUTH_PASSWORD=${MONGO_ROOT_PASSWORD}
-      - ME_CONFIG_BASICAUTH_USERNAME=${MONGOEXPRESS_LOGIN}
-      - ME_CONFIG_BASICAUTH_PASSWORD=${MONGOEXPRESS_PASSWORD}
     depends_on:
       - mongo
     ports:
