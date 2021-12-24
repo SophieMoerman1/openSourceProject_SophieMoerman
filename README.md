@@ -1,39 +1,59 @@
+
 # openSourceProject_SophieMoerman
-How to start this application
-First create a .env file Then copy the .env example and paste to the .env file
+<p >Open Source Project for Development 5 course. <br>
+</p>
 
-To run this app run "docker-compose up --build -d"
-
+# How to start this application
+<p >First create a .env file Then copy the .env example and paste to the .env file <br>
+To run this app run "docker-compose up --build -d" <br>
 OR locally use the command "npm start"
+</p>
 
-Endpoints
-GET
+# Endpoints
+
+## GET
+```bash
 "/students" 
+```
 List all the students with their information
 
+```bash
 "/students/:studentId" 
+```
 List students with their information based on studentId
 
-Params structure
+### Params structure
+
 studentId: integer
 
-POST
+
+## POST
+```bash
 "/students" 
+```
+
 post a new student to the database
 
 Request body schema: application/json
 
-Body structure:
+### Body structure:
+
 firstname: string lastname: string birthday: string studentnr: integer
 
-PUT
+## PUT
+```bash
 "/students" 
+```
 update a student
 
 
-DELETE
+## DELETE
+```bash
 "/students/:studentId" 
+```
 delete a student based on id
 
-Params structure
+### Params structure
+
 studentId: integer
+
