@@ -1,29 +1,24 @@
 version: "3.9"
 
 services:
-  api:
-    build: ./api
-    image: sophm127/app:0.1
+  mongo:
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USER}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
+      - MONGO_INITDB_DATABASE=project
+  mongo-express:
+    image: mongo-express
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=mongo
+      - ME_CONFIG_MONGODB_PORT=27017
+      - ME_CONFIG_MONGODB_ENABLE_ADMIN=false
+      - ME_CONFIG_MONGODB_AUTH_DATABASE=admin
+      - ME_CONFIG_MONGODB_AUTH_USERNAME=${MONGO_ROOT_USER}
+      - ME_CONFIG_MONGODB_AUTH_PASSWORD=${MONGO_ROOT_PASSWORD}
+      - ME_CONFIG_BASICAUTH_USERNAME=${MONGOEXPRESS_LOGIN}
+      - ME_CONFIG_BASICAUTH_PASSWORD=${MONGOEXPRESS_PASSWORD}
+    depends_on:
+      - mongo
     ports:
-      - "3000:3000"
-    volumes:
-      - .api/src:/usr/app/src
-
-depends_on:
-      - pg
-    volumes:
-      - .api/src:/usr/app/src
-    enviroment:
-      - PG_CONNECTION_STRING=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@pg:5432/${POSTGRES}
-    
-  pg:
-    image: postgres:latest
-    ports:
-      - 5432:5432
-    enviroment:
-      - POSTGRES_DB
-      - POSTGRES_USER
-      - POSTGRES_PASSWORD
-      #- PGData=/var/lib/postgresql/data
-    volumes:
-      -./_volumes/pgdata/:var/lib/postgresql/date
+      - "8080:8081"
